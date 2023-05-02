@@ -21,6 +21,8 @@ Route::get('/', [\App\Http\Controllers\HomeController::class, 'home']);
 
 Route::get('/productos', [\App\Http\Controllers\ProductsController::class, 'productsList']);
 
-Route::get('/productos/{id}', function () {
-    return view('product');
-});
+
+Route::get('/productos/{id}', [\App\Http\Controllers\ProductsController::class, 'product']);
+// Route::get('/productos/{id}', function () {
+//     return view('product');
+// });
