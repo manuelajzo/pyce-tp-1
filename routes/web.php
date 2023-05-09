@@ -19,10 +19,9 @@ Route::get('/', [\App\Http\Controllers\HomeController::class, 'home']);
 //     return view('blog');
 // });
 
-Route::get('/productos', [\App\Http\Controllers\ProductsController::class, 'productsList']);
+Route::get('/productos', [\App\Http\Controllers\ProductsController::class, 'productsList'])->name('productsList');
 
+Route::get('/productos/nuevo', [\App\Http\Controllers\ProductsController::class, 'newProductForm'])->name('newProductForm');
+Route::post('/productos/nuevo', [\App\Http\Controllers\ProductsController::class, 'createNewProduct'])->name('createProduct');
+Route::get('/productos/{id}', [\App\Http\Controllers\ProductsController::class, 'product'])->name('product');
 
-Route::get('/productos/{id}', [\App\Http\Controllers\ProductsController::class, 'product']);
-// Route::get('/productos/{id}', function () {
-//     return view('product');
-// });

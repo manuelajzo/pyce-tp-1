@@ -31,7 +31,7 @@
             <ul id="menu">
                 <li ><a  href="{{ url('/') }}">Home</a></li>
                 <li ><a  href="{{ url('/blog') }}">Blog</a></li>
-                <li ><a  href="{{ url('/productos') }}">Productos</a></li>
+                <li ><a  href="{{ route('productsList') }}">Productos</a></li>
                 <!-- <li ><a  href="index.php?s=formContacto">Contacto</a></li> -->
             </ul>
         </nav>
