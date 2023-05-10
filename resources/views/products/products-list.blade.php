@@ -27,7 +27,10 @@
                     <td> {{ $product->price }} </td> 
                     <td> {{ $product->category }} </td> 
                     <td> {{ $product->product_description }} </td> 
-                    <td><a href="{{ route('product' , ['id' => $product->id]) }}" class="btn btn-primary">Ver</a></td>
+                    <td>
+                        <a href="{{ route('product' , ['id' => $product->id]) }}" class="btn btn-primary">Ver</a>
+                        <a href="{{ route('confirmDelete' , ['id' => $product->id]) }}" class="btn btn-danger">eliminar</a>
+                    </td>
                 </tr>
             @endforeach
         </tbody>

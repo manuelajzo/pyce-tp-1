@@ -37,7 +37,10 @@
         </nav>
     </header>
     <main>
-        @yield('main')
+        @if(Session::has('feedback.message'))
+        <div class="alert alert-success">{!! Session::get('feedback.message') !!}</div>
+        @endif
+        @yield('main')  
     </main>
     <footer>
         <p>Este sitio es un trabajo práctico para la materia Programación II del tercer cuatrimestre de la Escuela Da Vinci. </p>

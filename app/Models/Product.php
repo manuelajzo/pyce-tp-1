@@ -34,5 +34,23 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     protected $fillable = [ 'id', 'name', 'price', 'category', 'product_description', 'image', 'image_description'];    
+   
+    public static function validationRules(): array {
+        return [
+            'name' => ['required', 'min:2'],
+            'price' => 'required|numeric',
+            'product_description' => 'required'
+        ];
+    }
+
+    public static function validationMessages(): array {
+        return [
+            'name.required' => 'Tenés que ingresar el nombre del producto',
+            'name.min' => 'El nombre del producto tiene que tener al menos :min caracteres',
+            'price.required' => 'Tenés que ingresar el precio del producto',
+            'price.numeric' => 'El precio tiene que ser un número',
+            'product_description.required' => 'Tenés que escribir la fecha de estreno de la película',
+        ];
+    }
 }
 

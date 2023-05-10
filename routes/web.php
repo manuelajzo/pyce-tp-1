@@ -22,6 +22,10 @@ Route::get('/', [\App\Http\Controllers\HomeController::class, 'home']);
 Route::get('/productos', [\App\Http\Controllers\ProductsController::class, 'productsList'])->name('productsList');
 
 Route::get('/productos/nuevo', [\App\Http\Controllers\ProductsController::class, 'newProductForm'])->name('newProductForm');
-Route::post('/productos/nuevo', [\App\Http\Controllers\ProductsController::class, 'createNewProduct'])->name('createProduct');
+Route::post('/productos/nuevo', [\App\Http\Controllers\ProductsController::class, 'processCreateProduct'])->name('processCreateProduct');
+
 Route::get('/productos/{id}', [\App\Http\Controllers\ProductsController::class, 'product'])->name('product');
+
+Route::get('/productos/{id}/eliminar', [\App\Http\Controllers\ProductsController::class, 'confirmDelete'])->name('confirmDelete');
+Route::post('/productos/{id}/eliminar', [\App\Http\Controllers\ProductsController::class, 'processDelete'])->name('processDelete');
 
