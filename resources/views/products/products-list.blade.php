@@ -27,9 +27,16 @@
                     <td> {{ $product->price }} </td> 
                     <td> {{ $product->category }} </td> 
                     <td> {{ $product->product_description }} </td> 
+                    @if($product->image != null && Storage::has('imgs/' . $product->image))
+                        <td> <img class="mw-100 mh-100" src="{{ Storage::url('imgs/' . $product->image) }}" alt="{{ $product->imageDescription }}" > </td> 
+                    @else   
+                        <td> No hay imagen </td> 
+                    @endif
+                    
                     <td>
                         <a href="{{ route('product' , ['id' => $product->id]) }}" class="btn btn-primary">Ver</a>
                         <a href="{{ route('confirmDelete' , ['id' => $product->id]) }}" class="btn btn-danger">eliminar</a>
+                        <a href="{{ route('updateProductForm' , ['id' => $product->id]) }}" class="btn btn-secondary">editar</a>
                     </td>
                 </tr>
             @endforeach

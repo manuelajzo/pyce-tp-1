@@ -26,6 +26,9 @@ Route::post('/productos/nuevo', [\App\Http\Controllers\ProductsController::class
 
 Route::get('/productos/{id}', [\App\Http\Controllers\ProductsController::class, 'product'])->name('product');
 
+Route::get('/productos/{id}/editar', [\App\Http\Controllers\ProductsController::class, 'updateProductForm'])->name('updateProductForm');
+Route::post('/productos/{id}/editar', [\App\Http\Controllers\ProductsController::class, 'processUpdate'])->name('processUpdate');
+
 Route::get('/productos/{id}/eliminar', [\App\Http\Controllers\ProductsController::class, 'confirmDelete'])->name('confirmDelete');
 Route::post('/productos/{id}/eliminar', [\App\Http\Controllers\ProductsController::class, 'processDelete'])->name('processDelete');
 

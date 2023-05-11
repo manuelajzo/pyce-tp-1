@@ -6,25 +6,7 @@
 @section('title', 'Confirmación para Eliminar la Película ' . $product->title)
 
 @section('main')
-<section>
-        <div class="d-flex flex-row-reverse">
-            <div class="col-9 mb-3  ">
-                <h1 class="mb-3 ">{{ $product->name }}</h1>
-                <dl>
-                    <dt>Precio</dt>
-                    <dd>{{ $product->price }}</dd>
-                    <dt>Descripción</dt>
-                    <dd>{{ $product->product_description }}</dd>
-                </dl>
-            </div>
-            <div class="col-3">
-                <p>esto es una imagen</p>
-                <img src="" alt="{{ $product->imageDescription }}" >
-            </div>
-        </div>
-    </section>
-
-    <hr>
+    <x-product-data :product="$product"/>
 
     <form action="{{ route('processDelete', ['id' => $product->id]) }}" method="post">
         @csrf
