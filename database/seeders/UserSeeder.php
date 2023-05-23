@@ -14,7 +14,7 @@ class UserSeeder extends Seeder
     {
         \DB::table('users')->insert([
             [
-                'nickname'=> 'florencia',
+                'username'=> 'florencia',
                 'password'=> \Hash::make('qwe123'),
                 'remember_token' => null,
                 'created_at' => now(),

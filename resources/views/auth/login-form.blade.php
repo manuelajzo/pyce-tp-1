@@ -1,40 +1,37 @@
 @extends('layouts.main')
 @section('title', 'Crear producto')
 @section('main')
-    <h1 class="mb-3">Ingresá a tu cuenta</h1>
-    <form action="{{ route('processLogin') }}" method="post">
-        @csrf
-        
-        <div class="form-outline mb-4">
-            <label for="nickname" class="form-label">Nombre de usuario</label>
-            <input 
-                type="nickname" 
-                name="nickname" 
-                id="nickname" 
-                class="form-control" 
-                value="{{ old('nickname') }}"
-                @error('nickname') aria-describedBy="error-nickname" @enderror >
+    <section class="row justify-content-center">
+        <h2>Inicia Sesión</h2>
+        <form action="{{ route('processLogin') }}" method="post">
+            @csrf
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Usuario</label>
+                        <input 
+                            type="username" 
+                            name="username" 
+                            id="username" 
+                            class="form-control" 
+                            value="{{ old('username') }}"
+                            @error('username') aria-describedBy="error-username" @enderror 
+                            required >
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Contraseña</label>
+                        <input
+                            type="password" 
+                            name="password" 
+                            id="password" 
+                            class="form-control"
+                            @error('password') aria-describedBy="error-password" @enderror required>
+                    </div>
+                </div>    
+            </div>
             
-            @error('nickname')
-            <div class="text-danger" id="error-nickname">{{ $message }}</div>   
-            @enderror
-        </div>
-
-        <div class="form-outline mb-4">
-            <label for="password" class="form-label">Password</label>
-            <input 
-                type="password" 
-                name="password" 
-                id="password" 
-                class="form-control"
-                @error('password') aria-describedBy="error-password" @enderror >
-            
-                @error('password')
-            <div class="text-danger" id="error-password">{{ $message }}</div>
-            @enderror
-        </div>
-
-        <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
-
-    </form>
+            <button type="submit" class="btn btn-dark form-button">Entrar</button>
+        </form>
+    </section>
 @endsection

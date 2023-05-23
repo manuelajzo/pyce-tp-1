@@ -10,6 +10,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
     
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="icon" href="{{ asset('storage/imgs/favicon.png') }}" type="image/x-icon">
+
     <link rel="stylesheet" href="{{ asset('css/bootstrap/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
@@ -24,14 +29,14 @@
         
         <nav id="nav" class="col-6 navbar">    
             <ul id="menu">
-                <li ><a  href="{{ url('/') }}">Home</a></li>
+                <li ><a  href="{{ url('/') }}">Nosotros</a></li>
                 <li ><a  href="{{ url('/blog') }}">Blog</a></li>
                 <li ><a  href="{{ route('productsList') }}">Productos</a></li>
                 @auth    
                     <li >
                         <form  action="{{ route('processLogout') }}" method="post">
                             @csrf
-                            <button type="submit" class="btn nav-link">{{ auth()->user()->nickname }} (Cerrar Sesión)</button>
+                            <button type="submit" class="btn nav-link">{{ auth()->user()->username }} (Cerrar Sesión)</button>
                         </form>
                     </li>
                 @else

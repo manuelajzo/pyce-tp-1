@@ -5,7 +5,7 @@
 @extends('layouts.main')
 @section('title', 'Crear producto')
 @section('main')
-    <h1>Form</h1>
+    <h2>Form</h2>
     <form action="{{ route('processCreateProduct') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <x-product-form action="Crear"/>

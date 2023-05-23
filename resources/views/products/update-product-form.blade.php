@@ -6,7 +6,7 @@
 @section('title', 'Crear producto')
 @section('main')
 <div>
-    <h1>Form</h1>
+    <h2>Form</h2>
     <form action="{{ route('processUpdate', ['id' => $product->id]) }}" method="POST" enctype="multipart/form-data">
         @csrf
         <x-product-form :product="$product" action="Guardar"/>

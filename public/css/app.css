@@ -437,11 +437,11 @@ legend {
     text-align: center;
 }
 
-.delete {
+.delete, .see-product {
     color: #16001e;
-}
+}   
 
-.delete:hover{
+.delete:hover, .see-product:hover{
     color: #8d524b;
 }
 

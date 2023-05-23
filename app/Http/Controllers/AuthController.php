@@ -13,7 +13,7 @@ class AuthController extends Controller
     }
 
     public function processLogin(Request $request) {
-        $credentials = $request->only(['nickname', 'password']);
+        $credentials = $request->only(['username', 'password']);
         
         $request->validate(User::validationRules(), User::validationMessages());
 

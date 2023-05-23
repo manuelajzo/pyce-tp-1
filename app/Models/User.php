@@ -10,7 +10,7 @@ use Illuminate\Notifications\Notifiable;
  * App\Models\User
  *
  * @property int $id
- * @property string $nickname
+ * @property string $username
  * @property string $password
  * @property string|null $remember_token
  * @property \Illuminate\Support\Carbon|null $created_at
@@ -23,7 +23,7 @@ use Illuminate\Notifications\Notifiable;
  * @method static \Illuminate\Database\Eloquent\Builder|User query()
  * @method static \Illuminate\Database\Eloquent\Builder|User whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|User whereNickname($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|User whereUsername($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User wherePassword($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereRememberToken($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereUpdatedAt($value)
@@ -38,15 +38,15 @@ class User extends BaseUser
 
     public static function validationRules(): array {
         return [
-            'nickname' => ['required', 'min:2'],
+            'username' => ['required', 'min:2'],
             'password' => ['required', 'min:4'],
         ];
     }
 
     public static function validationMessages(): array {
         return [
-            'nickname.required' => 'Debe ingresar algun nickname',
-            'nickname.min' => 'El nickname debe tener al menos :min caracteres',
+            'username.required' => 'Debe ingresar algun username',
+            'username.min' => 'El username debe tener al menos :min caracteres',
             'password.required' => 'Éste campo no puede estar vacío',
             'password.min' => 'La contraseña debe tener al menos :min caracteres',
         ];
