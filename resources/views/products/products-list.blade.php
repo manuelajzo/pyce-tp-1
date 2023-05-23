@@ -17,6 +17,7 @@
                 <th>Precio</th>
                 <th>Categoría</th>
                 <th>Descripción</th>
+                <th>Imágen</th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -35,8 +36,10 @@
                     
                     <td>
                         <a href="{{ route('product' , ['id' => $product->id]) }}" class="btn btn-primary">Ver</a>
-                        <a href="{{ route('confirmDelete' , ['id' => $product->id]) }}" class="btn btn-danger">eliminar</a>
-                        <a href="{{ route('updateProductForm' , ['id' => $product->id]) }}" class="btn btn-secondary">editar</a>
+                        @auth
+                            <a href="{{ route('confirmDelete' , ['id' => $product->id]) }}" class="btn btn-danger">eliminar</a>
+                            <a href="{{ route('updateProductForm' , ['id' => $product->id]) }}" class="btn btn-secondary">editar</a>
+                        @endauth
                     </td>
                 </tr>
             @endforeach

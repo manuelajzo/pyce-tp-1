@@ -19,6 +19,11 @@ Route::get('/', [\App\Http\Controllers\HomeController::class, 'home']);
 //     return view('blog');
 // });
 
+Route::get('/iniciar-sesion', [\App\Http\Controllers\AuthController::class, 'loginForm'])->name('loginForm');
+Route::post('/iniciar-sesion', [\App\Http\Controllers\AuthController::class, 'processLogin'])->name('processLogin');
+
+Route::post('/cerrar-sesion', [\App\Http\Controllers\AuthController::class, 'processLogout'])->name('processLogout');
+
 Route::get('/productos', [\App\Http\Controllers\ProductsController::class, 'productsList'])->name('productsList');
 
 Route::get('/productos/nuevo', [\App\Http\Controllers\ProductsController::class, 'newProductForm'])->name('newProductForm');

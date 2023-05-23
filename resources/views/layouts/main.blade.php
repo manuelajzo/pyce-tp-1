@@ -32,13 +32,23 @@
                 <li ><a  href="{{ url('/') }}">Home</a></li>
                 <li ><a  href="{{ url('/blog') }}">Blog</a></li>
                 <li ><a  href="{{ route('productsList') }}">Productos</a></li>
+                @auth    
+                    <li >
+                        <form  action="{{ route('processLogout') }}" method="post">
+                            @csrf
+                            <button type="submit" class="btn nav-link">{{ auth()->user()->email }} (Cerrar Sesión)</button>
+                        </form>
+                    </li>
+                @else
+                    <li ><a  href="{{ route('loginForm') }}">Iniciar Sesión</a></li>                
+                @endauth
                 <!-- <li ><a  href="index.php?s=formContacto">Contacto</a></li> -->
             </ul>
         </nav>
     </header>
     <main>
         @if(Session::has('feedback.message'))
-        <div class="alert alert-success">{!! Session::get('feedback.message') !!}</div>
+        <div class="alert alert-{{ Session::get('feedback.type', 'success') }}">{!! Session::get('feedback.message') !!}</div>
         @endif
         @yield('main')  
     </main>
