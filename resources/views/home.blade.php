@@ -15,7 +15,7 @@
             <p>A mano en Argentina</p>
         </div>
         
-            <img src="./res/vicki.jpg" alt="Vicki, la dueña de Hecho por Vicki, sosteniendo una fuente con el logo de la empresa">
+            <img src="{{ asset('storage/imgs/vicki.jpg') }}" alt="Vicki, la dueña de Hecho por Vicki, sosteniendo una fuente con el logo de la empresa">
     </section>
 </div>
 @endsection
