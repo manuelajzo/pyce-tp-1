@@ -14,7 +14,7 @@ class UserSeeder extends Seeder
     {
         \DB::table('users')->insert([
             [
-                'email'=> 'florencia.fernandezb@davinci.edu.ar',
+                'nickname'=> 'florencia',
                 'password'=> \Hash::make('qwe123'),
                 'remember_token' => null,
                 'created_at' => now(),

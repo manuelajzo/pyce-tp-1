@@ -23,11 +23,7 @@
             <h1 ><a href="index.php?s=home">Hecho por Vicki</a></h1>
         </div>
         
-        <nav id="nav" class="col-6 navbar">
-            <ul id="open-close">
-                <li class="open"><a href="#nav">Abrir</a></li>
-                <li class="close"><a href="#">Cerrar</a></li>
-            </ul>    
+        <nav id="nav" class="col-6 navbar">    
             <ul id="menu">
                 <li ><a  href="{{ url('/') }}">Home</a></li>
                 <li ><a  href="{{ url('/blog') }}">Blog</a></li>
@@ -36,7 +32,7 @@
                     <li >
                         <form  action="{{ route('processLogout') }}" method="post">
                             @csrf
-                            <button type="submit" class="btn nav-link">{{ auth()->user()->email }} (Cerrar Sesión)</button>
+                            <button type="submit" class="btn nav-link">{{ auth()->user()->nickname }} (Cerrar Sesión)</button>
                         </form>
                     </li>
                 @else

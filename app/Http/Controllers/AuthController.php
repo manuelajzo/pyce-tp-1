@@ -13,9 +13,9 @@ class AuthController extends Controller
     }
 
     public function processLogin(Request $request) {
-        $credentials = $request->only(['email', 'password']);
-        print_r($credentials);
-        // $request->validate(User::validationRules(), Product::validationMessages());
+        $credentials = $request->only(['nickname', 'password']);
+        
+        $request->validate(User::validationRules(), User::validationMessages());
 
         if(!auth()->attempt($credentials)) {
             return redirect()

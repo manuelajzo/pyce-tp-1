@@ -6,9 +6,11 @@
 @section('main')
     <h1>PRODUCTS LIST</H1>
 
+    @auth
     <div class="mb-3">
         <a href="{{ route('newProductForm') }}">Crear producto</a>
     </div>
+    @endauth
 
     <table class="table table-striped table-bordered">
         <thead>
@@ -25,7 +27,7 @@
             @foreach ($products as $product):
                 <tr>
                     <td> {{ $product->name }} </td> 
-                    <td> {{ $product->price }} </td> 
+                    <td> ${{ $product->price }} </td> 
                     <td> {{ $product->category }} </td> 
                     <td> {{ $product->product_description }} </td> 
                     @if($product->image != null && Storage::has('imgs/' . $product->image))

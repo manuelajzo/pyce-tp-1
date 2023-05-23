@@ -19,15 +19,17 @@ Route::get('/', [\App\Http\Controllers\HomeController::class, 'home']);
 //     return view('blog');
 // });
 
+// Auth
 Route::get('/iniciar-sesion', [\App\Http\Controllers\AuthController::class, 'loginForm'])->name('loginForm');
 Route::post('/iniciar-sesion', [\App\Http\Controllers\AuthController::class, 'processLogin'])->name('processLogin');
 
 Route::post('/cerrar-sesion', [\App\Http\Controllers\AuthController::class, 'processLogout'])->name('processLogout');
 
+//Products
 Route::get('/productos', [\App\Http\Controllers\ProductsController::class, 'productsList'])->name('productsList');
 
-Route::get('/productos/nuevo', [\App\Http\Controllers\ProductsController::class, 'newProductForm'])->name('newProductForm');
-Route::post('/productos/nuevo', [\App\Http\Controllers\ProductsController::class, 'processCreateProduct'])->name('processCreateProduct');
+Route::get('/productos/nuevo', [\App\Http\Controllers\ProductsController::class, 'newProductForm'])->name('newProductForm')->middleware('auth');
+Route::post('/productos/nuevo', [\App\Http\Controllers\ProductsController::class, 'processCreateProduct'])->name('processCreateProduct')->middleware('auth');
 
 Route::get('/productos/{id}', [\App\Http\Controllers\ProductsController::class, 'product'])->name('product');
 
