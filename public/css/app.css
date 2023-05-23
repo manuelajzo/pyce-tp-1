@@ -93,7 +93,7 @@ header div h1 a{
     margin: auto;
     font-size: 0 !important;
     display: block;
-    background: no-repeat url(../res/logo.png);
+    background: no-repeat url(../storage/imgs/logo.png);
 }
 
 .navbar li {
