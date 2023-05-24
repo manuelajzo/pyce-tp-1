@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@yield('title') :: Hecho por Vicki</title>
+    <title>@yield('title') | Hecho por Vicki</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +13,7 @@
     
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link rel="icon" href="{{ asset('storage/imgs/favicon.png') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('storage/imgs/favicon.ico') }}" type="image/x-icon">
 
     <link rel="stylesheet" href="{{ asset('css/bootstrap/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
@@ -32,6 +32,7 @@
                 <li ><a  href="{{ url('/') }}">Nosotros</a></li>
                 <li ><a  href="{{ url('/blog') }}">Blog</a></li>
                 <li ><a  href="{{ route('productsList') }}">Productos</a></li>
+                <!-- MIRAR ACA -->
                 @auth    
                     <li >
                         <form  action="{{ route('processLogout') }}" method="post">
@@ -53,9 +54,9 @@
         @yield('main')  
     </main>
     <footer>
-        <p>Este sitio es un trabajo práctico para la materia Programación II del tercer cuatrimestre de la Escuela Da Vinci. </p>
+        <p>Este sitio es un trabajo práctico para la materia Portales y Comercio Electrónico del cuarto cuatrimestre de la Escuela Da Vinci. </p>
         <p>Florencia Fernández Bugna | Manuela Jaureguialzo</p>
-        <p>&copy; Da Vinci - 2021</p>
+        <p>&copy; Da Vinci - 2023</p>
     </footer>
 </body>
 </html>

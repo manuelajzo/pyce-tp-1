@@ -3,7 +3,7 @@
 ?>
 @extends('layouts.main')
 
-@section('title', 'Confirmación para Eliminar la Película ' . $product->title)
+@section('title', 'Confirmación para eliminar el artículo' . $product->title)
 
 @section('main')
     <x-product-data :product="$product"/>
@@ -12,7 +12,7 @@
         @csrf
         <h2 class="mb-3">Confirmación Necesaria</h2>
 
-        <p class="mb-3">¿Estás seguro que querés eliminar este producto?</p>
+        <p class="mb-3">¿Estás seguro que querés eliminar este artículo?</p>
 
         <button type="submit" class="btn btn-danger">Sí, eliminar</button>
     </form>

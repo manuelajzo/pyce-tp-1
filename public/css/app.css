@@ -93,7 +93,7 @@ header div h1 a{
     margin: auto;
     font-size: 0 !important;
     display: block;
-    background: no-repeat url(../storage/imgs/logo.png);
+    background: no-repeat url(../res/logo.png);
 }
 
 .navbar li {
@@ -170,10 +170,7 @@ header div h1 a{
 }
 
 .product-details {
-    display: flex;
-    text-align: center;
-    margin-top: 70px;
-    margin-bottom: 75px;
+    width: 100%;
 }
 
 .prod-details {
@@ -285,6 +282,11 @@ legend {
     color: #16001e;
     text-align: center;
     font-size: 1.2em;
+}
+
+.volver {
+    width: 50%;
+    text-align: center;
 }
 
 @media screen and (min-width: 1400px) {
@@ -437,11 +439,11 @@ legend {
     text-align: center;
 }
 
-.delete, .see-product {
+.delete {
     color: #16001e;
-}   
+}
 
-.delete:hover, .see-product:hover{
+.delete:hover{
     color: #8d524b;
 }
 

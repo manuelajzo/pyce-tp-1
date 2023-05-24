@@ -3,7 +3,7 @@
 /** @var \App\Models\Product $product */
 ?>
 @extends('layouts.main')
-@section('title', 'Crear producto')
+@section('title', 'Crear artículo')
 @section('main')
 <div>
     <h2>Form</h2>

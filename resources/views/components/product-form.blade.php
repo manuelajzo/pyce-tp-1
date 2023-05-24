@@ -13,7 +13,7 @@
         <div class="text-danger" id="error-release_date">{{ $message }}</div>
         @enderror
     </div>
-    <div class="mb-3">
+    <!-- <div class="mb-3">
         <label for="price" class="form-label">Precio</label>
         <input 
             type="text" 
@@ -25,9 +25,9 @@
         @error('price')
         <div class="text-danger"  id="error-price">{{ $message }}</div>
         @enderror
-    </div>
+    </div> -->
     <div class="mb-3">
-        <label for="category" class="form-label">Categoría</label>
+        <label for="category" class="form-label">Tags</label>
         <input 
             type="text" 
             class="form-contro" 

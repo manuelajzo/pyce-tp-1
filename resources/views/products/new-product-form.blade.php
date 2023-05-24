@@ -3,7 +3,7 @@
 
 ?>
 @extends('layouts.main')
-@section('title', 'Crear producto')
+@section('title', 'Crear artículo')
 @section('main')
     <h2>Form</h2>
     <form action="{{ route('processCreateProduct') }}" method="POST" enctype="multipart/form-data">
